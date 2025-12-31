@@ -3,6 +3,18 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\urlstyle{same}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+\newtheorem*{solution}{Solution}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+
 
 %opening
 \title{Daniel's H3 Mathematics Notes}
@@ -33,40 +45,208 @@ This is my H3 Mathematics notes. This paper is nothing less than a re-formatting
 
 
 
-\section{Nomenclature and Notations}
+\section{Some Nomenclature and Notations}
+
+The set of real numbers is denoted by $\mathbb{R}$. Unless stated otherwise, the universal set of numbers is the set of real numbers.
 
 \begin{itemize}
-	\item $\mathbb{Z}$ denotes the set of integers.
-	\item $\mathbb{Z}^+$ denotes the set of positive integers.
-	\item $\mathbb{N}$ denotes the set of natural numbers.
-	\item $\mathbb{Q}$ denotes the set of rational numbers.
-	\item $\varnothing$ denotes the empty set.
+	
+	\item $\mathbb{Z} = \{0, \pm 1, \pm 2, \pm 3, \pm 4, \ldots\}$: the set of integers.  
+	The set of numbers that can be obtained from $0$ by adding or subtracting $1$.
+	
+	\item $\mathbb{Z}^+ = \mathbb{Z}_{>0} = \{1, 2, 3, 4, 5, \ldots\}$: the set of positive integers.
+	
+	\item $\mathbb{N} = \mathbb{Z}^+$: the set of natural numbers.  
+	(Remark: Some textbooks include $0$ in $\mathbb{N}$.)
+	
+	\item $\mathbb{Q} = \{\, m/n \mid m,n \in \mathbb{Z},\ n \neq 0 \,\}$: the set of rational numbers.
+	
+	\item $\varnothing$: the empty set, the set containing no elements.
+	
+	\item Similarly, we can use $\mathbb{Z}^-$, $\mathbb{Q}^+$, $\mathbb{Q}^-$, $\mathbb{R}^+$, $\mathbb{R}^-$, \dots
+	
+	\item $\mathbb{C}$ denotes the set of all complex numbers. Not discussed (formally).
 	
 \end{itemize}
 
 \section{Mathematical Statements}
 
-\subsection{Structure}
+\subsection{Structures}
 
 \subsubsection{Conditional Statements}
 
+\begin{itemize}
+	
+	\item \textbf{Standard form:} \emph{If $P$, then $Q$}.
+	\item \textbf{Symbolic form:} $P \Rightarrow Q$.
+	\item \textbf{Other forms:} \emph{$Q$ is necessary for $P$}, or, \emph{$P$ is sufficient for $Q$}.
+	
+\end{itemize}
+
+Here $P$ is called the \emph{hypothesis} (or \emph{assumption}), and $Q$ is called the \emph{conclusion}. 
+No assumption is made that $P$ is true; rather, the statement asserts that whenever $P$ is true, $Q$ is also true.
+
+\begin{example}
+	If $ n > 2 $, then $ n > 1 $.
+\end{example}
+
+
 \subsubsection{Biconditional Statements}
+
+\begin{itemize}
+	\item \textbf{Standard form:} \emph{$P$ if and only if $Q$}.
+	\item \textbf{Abbreviation:} \emph{$P$ iff $Q$}.
+	\item \textbf{Other forms:} \emph{$P$ is necessary and sufficient for $Q$}.
+	\item \textbf{Symbolic form:} $P \Leftrightarrow Q$.
+	\item \textbf{Meaning:} $P \Rightarrow Q$ and $Q \Rightarrow P$.
+\end{itemize}
+
+\begin{example}
+	$n$ is odd if and only if $ n + 1 $ is even.
+\end{example}
 
 \subsubsection{Existential Statements}
 
+\begin{itemize}
+	\item \textbf{Standard form:} \emph{There exists an $x$ in $D$ such that $P(x)$.}
+	\item \textbf{Abbreviation:} $\exists\, x \in D,\; P(x)$.
+	\item \textbf{$D$ is the domain.}
+	\item \textbf{Other forms:} \emph{there is a \dots}, \emph{there exists \dots}, 
+	\emph{for some \dots}, \emph{we can find \dots}, \emph{\dots\ has \dots}.
+\end{itemize}
+
+
+\begin{example}
+	There exists a real number $x$ such that $ x^2 = 2 $.
+\end{example}
+
+\begin{example}
+	There is a tallest man in the world.
+\end{example}
+
 \subsection{Content}
 
-A (mathematical) definition is a (true) mathematical statement that gives the precise meaning of a word
-or phrase that represents some object, property or other concepts.
+\subsubsection{Definitions}
 
-A theorem is a true mathematical statement that can be proven mathematically.
+\begin{definition}[Definition]
+	A mathematical definition is a true mathematical statement that gives the precise meaning of a word or phrase that represents an object, a property, or another concept.
+\end{definition}
 
-An axiom is a mathematical statement that does not require proof.
+To state a mathematical statement, we first need precise definitions.
+For example, the sentence ``All zaxcillian has rizz'' is meaningless without definitions.
+
+\begin{example}[Negative example]
+	From \url{https://www.dictionary.com}:
+	\begin{itemize}[
+		leftmargin=3em,
+		label=\textbullet,
+		itemsep=0.2ex,
+		topsep=0.2ex,
+		parsep=0pt,
+		font=\small
+		]
+		\item Definition of happy: feeling or showing pleasure, contentment, or joy.
+		\item Definition of pleased: feeling happy or satisfied.
+		\item Examples: winning a match, doing well on an exam, having an ice cream, etc.
+	\end{itemize}
+\end{example}
+
+\begin{example}
+	An integer $a$ is \emph{even} if there exists an integer $n$ such that $a = 2n$.
+\end{example}
+
+\begin{example}
+	An integer $a$ is \emph{odd} if there exists an integer $n$ such that $a = 2n + 1$.
+\end{example}
+
+
+
+
+\subsubsection{Theorems}
+
+\begin{definition}[Theorem]
+	A theorem is a true mathematical statement that can be proven mathematically.
+\end{definition}
+
+\begin{example}
+	$n$ is odd if and only if $ n + 1 $ is even.
+\end{example}
+
+\subsubsection{Axioms}
+
+\begin{definition}[Axiom]
+	An axiom is a mathematical statement that does not require proof.
+\end{definition}
+
+\begin{example}
+	If x and y are integers, then so is $ x + y $.
+\end{example}
+
+Some axioms of the real numbers $\mathbb{R}$: see Appendix~A for a full list.
+\begin{itemize}
+	
+	\item Closure.  
+	For any real numbers $x$ and $y$, $x + y$ and $x \cdot y$ are real numbers.
+	
+	\item Associative.  
+	For any $x, y, z$,
+	\[
+	x + (y + z) = (x + y) + z \quad \text{and} \quad
+	x \cdot (y \cdot z) = (x \cdot y) \cdot z.
+	\]
+	
+	\item Commutative.  
+	For any $x$ and $y$,
+	\[
+	x + y = y + x \quad \text{and} \quad x \cdot y = y \cdot x.
+	\]
+	
+	\item Identity.  
+	There exist $0$ and $1$ such that $x + 0 = x$ and $1 \cdot x = x$ for all $x$.
+	
+	\item Inverse.  
+	For any $x$, there exists $-x$ such that $x + (-x) = 0$.  
+	If $x \neq 0$, there exists $\frac{1}{x}$ such that $x \cdot \frac{1}{x} = 1$.
+	
+	\item Distributive.  
+	For any $x, y, z$,
+	\[
+	x \cdot (y + z) = x \cdot y + x \cdot z.
+	\]
+	
+\end{itemize}
+
+It depends on whom you ask. Some authors instead construct the set of real numbers.
+See \url{https://en.wikipedia.org/wiki/Construction_of_the_real_numbers}.
+
+Here are some axiomatic systems used in mathematics.
+\begin{itemize}
+	
+	\item Zermelo--Fraenkel (ZF) set theory:  
+	\url{https://plato.stanford.edu/entries/set-theory/zf.html}.
+	
+	\item May include the axiom of choice (ZFC):  
+	\url{https://plato.stanford.edu/entries/axiom-choice/}.
+	\begin{itemize}
+		\item Even with the axiom of choice, mathematicians are still unable to prove the continuum hypothesis.
+		\item This led to the notion of independence.
+	\end{itemize}
+	
+	\item Euclid's axioms of geometry:  
+	\url{https://plus.maths.org/content/maths-minute-euclids-axioms}.
+	\begin{itemize}
+		\item The fifth axiom caused difficulties; for example, on a sphere, so-called ``parallel lines'' intersect.
+		\item This gives rise to non-Euclidean geometry (manifolds).
+	\end{itemize}
+	
+\end{itemize}
+
 
 \section{Proofs}
 
-A (mathematical) proof is a deductive argument for a mathematical statement, showing that the stated assumptions logically guarantee the conclusion.
-
+\begin{definition}[Proof]
+	A (mathematical) proof is a deductive argument for a mathematical statement, showing that the stated assumptions logically guarantee the conclusion.
+\end{definition}
 \[
 P \xLongrightarrow{\substack{
 		\text{definitions, axioms, algebraic manipulations,} \\
@@ -74,11 +254,153 @@ P \xLongrightarrow{\substack{
 }} Q
 \]
 
+\begin{example}
+	For $a \in \mathbb{Z}$, if $a$ is odd, then $a + 1$ is even.
+	
+	\begin{itemize}[
+		leftmargin=3em,
+		label=\textbullet,
+		itemsep=0.2ex,
+		topsep=0.2ex,
+		parsep=0pt,
+		font=\small
+		]
+		
+		\item The hypothesis (or assumption) is $P$: $a$ is odd.  
+		The conclusion is $Q$: $a + 1$ is even.
+		
+		\item In short, we want to prove the conditional statement
+		\[
+		a \text{ is odd} \;\Rightarrow\; a + 1 \text{ is even}.
+		\]
+		
+		\item We may give a direct proof: start with $P$ and end with $Q$.
+		
+	\end{itemize}
+	
+\end{example}
+
+\begin{theorem}
+	For $a \in \mathbb{Z}$, if $a$ is odd, then $ a + 1 $ is even.
+\end{theorem}
+
+\begin{proof}[Not a Proof.]
+	3 is odd, 3+1=4 is even.
+	
+	5 is odd, 5+1=6 is even.
+	
+	97 is odd, 97+1=98 is even.
+	
+	etc...
+\end{proof}
+
+This is not a proof; it only gives examples. It does not show that the statement is true for all odd integers. 
+This is a universal statement (“for any”, “for all”, notation $\forall$). 
+Such a statement cannot be proved by exhaustive search.
+
+\begin{proof}[Not a Proof.]
+	Suppose we try to find an odd integer $a$ such that $a + 1$ is not even. 
+	This is impossible; therefore, the theorem is true.
+\end{proof}
+
+The inability to find a counterexample does not constitute a proof. For example, ``All crows are black."
+
+\begin{proof}[Not a Proof.]
+	Of course it’s true since my professor said it is. This follows from deep algebraic structures that extend
+	beyond elementary divisibility rules, touching on abstract algebra, modular arithmetic, and measure theory.
+	Additionally, this result is a trivial corollary of the Generalized Parity Theorem, which is left as an exercise
+	to the reader.
+\end{proof}
+
+This is called proof by intimidation, but Mathematicians should uphold truth and not be intimidated.
+
+\begin{proof}[(Direct) proof]
+	Suppose $a$ is odd. {\small\emph{(Starting from the hypothesis.)}}
+	
+	There exists an integer $n$ such that $a = 2n + 1$. {\small\emph{(Definition of odd number.)}}
+	
+	Then $a + 1 = 2n + 2 = 2(n + 1)$. {\small\emph{(Algebraic manipulation.)}}
+	
+	Since $m = n + 1$ is an integer. {\small\emph{(Use axiom, closure property.)}}
+	
+	So, $a + 2 = 2m$ for some integer $m$. {\small\emph{(Definition of even.)}}
+	
+	Hence, $a + 1$ is even. {\small\emph{(Conclusion.)}}
+\end{proof}
+
+\begin{proof}
+	Suppose $a$ is odd. There exists an integer $n$ such that $a = 2n + 1$. Then
+	\[
+	a + 1 = 2n + 2 = 2(n + 1) = 2m,
+	\]
+	where $m = n + 1$. Since $m = n + 1$ is an integer, $a + 1 = 2m$ is even.
+	
+	
+\end{proof}
+
+The box in the bottom right indicates the end of the proof. We may also write “QED.”
+
+
 \subsection{Direct Proof}
 
 A direct proof is an approach to prove a conditional statement $P \Rightarrow Q$.
 
-\subsection{Counter Example}
+\begin{itemize}
+	\item It is a series of valid arguments that starts with the hypothesis $P$ and ends with the conclusion $Q$.
+	\item In the process, we may use definitions, properties, axioms, algebraic manipulations, and other known results.
+	\[
+	P \;\Rightarrow\; P_1 \;\Rightarrow\; P_2 \;\Rightarrow\; \cdots \;\Rightarrow\; P_k \;\Rightarrow\; Q.
+	\]
+	\item Keep the conclusion $Q$ in mind at every step; each statement $P_i$ moves closer to $Q$.
+	\item We may "cheat" and work backwards from $Q$ a little.
+	\item We may need to use existential instantiation.
+\end{itemize}
+
+\subsection{Existential Instantiation}
+
+The symbol $\exists$ denotes the existential quantifier and is read as “there exists.”
+
+\begin{itemize}
+	
+	\item If we know that something exists, we may give it a name (label) and use it.
+	
+	\item However, do not give two \emph{a priori} different objects the same name (label) in the current discussion.
+	
+\end{itemize}
+	
+	\begin{example}
+		Let $a$ be an odd integer. Then there exists an integer $n$ such that $a = 2n + 1$.
+		\[
+		\exists\, n \in \mathbb{Z} \;\text{s.t.}\; a = 2n + 1
+		\]
+	\end{example}
+	
+	\begin{example}
+		Let $a$ and $b$ be odd integers. Then there exists an integer $n$ such that
+		$a = 2n + 1$ and $b = 2n + 1$.
+		\begin{itemize}[
+			leftmargin=3em,
+			label=\textbullet,
+			itemsep=0.2ex,
+			topsep=0.2ex,
+			parsep=0pt,
+			font=\small
+			]
+			\item This would imply that $a = b$, which might not be true.
+			\item Instead, there exist integers $n$ and $m$ such that $a = 2n + 1$ and $b = 2m + 1$.
+			\[
+			\exists\, n,m \in \mathbb{Z} \;\text{s.t.}\; a = 2n + 1,\quad b = 2m + 1
+			\]
+		\end{itemize}
+		
+		
+	\end{example}
+	
+
+
+
+
+\subsection{Counterexample}
 
 \subsection{Proof by Cases}
 
@@ -94,7 +416,7 @@ A direct proof is an approach to prove a conditional statement $P \Rightarrow Q$
 
 \subsection{Properties of Congruence}
 
-\subsection{Modular Aritmethic}
+\subsection{Modular Arithmethic}
 
 \section{Truth Table}
 
@@ -102,7 +424,7 @@ A direct proof is an approach to prove a conditional statement $P \Rightarrow Q$
 
 \section{Sequences and Series}
 
-\section{Pigeon Hole Principle}
+\section{Pigeonhole Principle}
 
 
 
