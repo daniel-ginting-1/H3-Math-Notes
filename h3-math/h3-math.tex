@@ -14,6 +14,7 @@
 \newtheorem*{solution}{Solution}
 \newtheorem*{definition}{Definition}
 \newtheorem*{theorem}{Theorem}
+\newtheorem*{exercise}{Exercise}
 
 
 %opening
@@ -295,7 +296,7 @@ P \xLongrightarrow{\substack{
 \end{proof}
 
 This is not a proof; it only gives examples. It does not show that the statement is true for all odd integers. 
-This is a universal statement (“for any”, “for all”, notation $\forall$). 
+This is a universal statement (“for any”, “for all”, notated $\forall$). 
 Such a statement cannot be proved by exhaustive search.
 
 \begin{proof}[Not a Proof.]
@@ -321,9 +322,9 @@ This is called proof by intimidation, but Mathematicians should uphold truth and
 	
 	Then $a + 1 = 2n + 2 = 2(n + 1)$. {\small\emph{(Algebraic manipulation.)}}
 	
-	Since $m = n + 1$ is an integer. {\small\emph{(Use axiom, closure property.)}}
+	Since $m = n + 1$ is an integer, {\small\emph{(Use axiom, closure property.)}}
 	
-	So, $a + 2 = 2m$ for some integer $m$. {\small\emph{(Definition of even.)}}
+	therefore, $a + 2 = 2m$ for some integer $m$. {\small\emph{(Definition of even.)}}
 	
 	Hence, $a + 1$ is even. {\small\emph{(Conclusion.)}}
 \end{proof}
@@ -393,14 +394,45 @@ The symbol $\exists$ denotes the existential quantifier and is read as “there 
 			\]
 		\end{itemize}
 		
-		
 	\end{example}
 	
+\begin{theorem}
+	The product of an even integer with an odd integer is even.
+\end{theorem}
 
+\begin{proof}[Not a Proof.]
+	Suppose $m$ is even and $n$ is odd. Then
+	\[
+	mn = 2r = 2(p)(2q + 1) = (2p)(2q + 1)
+	\]
+	So, let $ m = 2p $ and $ n = 2q + 1 $ show that $ mn = 2r $ is even.
+\end{proof}
+Question: What is wrong with this proof?
 
-
+\begin{proof}
+	Suppose $m$ is even and $n$ is odd. Then
+	\[
+	\exists\, p,q \in \mathbb{Z}  \;\text{s.t.}\; m = 2p \;\text{and}\; n = 2q + 1.
+	\]
+	Therefore,
+	\[
+	mn = (2p)(2q + 1) = 2(p)(2q + 1) = 2r,
+	\]
+	where $ r = p(2q + 1) $ is an integer. Hence, $mn$ is even.
+\end{proof}
 
 \subsection{Counterexample}
+
+\begin{itemize}
+	\item The theorems thus far are universal conditional statements ($\forall$).
+	\item To disprove a universal conditional statement, that is, to show that it is false, provide a counter-example.
+\end{itemize}
+
+In providing a counter-example, it must fulfil the hypothesis, but not the conclusion. That is, to show that
+$P \Rightarrow Q$ is false, 
+\[
+P (\text{true}) \text{ and } Q(\text{false}) \text{ then } P  Q.
+\]
 
 \subsection{Proof by Cases}
 
@@ -412,7 +444,39 @@ The symbol $\exists$ denotes the existential quantifier and is read as “there 
 
 \subsubsection{Non-constructive Proof}
 
+\section{Divisibility}
+
+\begin{definition}
+	Let $n$ and $d$ be integers such that $d = 0$. We say that $n$ is divisible by $d$, or $d$ divides $n$, denoted as $ d | n $ if and only if there is an integer $k$ such that
+	\[
+	n = kd
+	\]
+	Otherwise, we say $d$ does not divide $n$, and denote it as $ d | n $.
+\end{definition}
+
+Caution: Not to be confused with $ d / n $
+
+\begin{theorem}
+	If $x$ is an even integer, then $x^2$ is divisible by $4$.
+\end{theorem}
+
+\begin{exercise}
+	Prove the following theorem
+		\begin{theorem}
+		For any $ a,b,c \in \mathbb{Z}$,
+		\[
+		a | b \text{ and } a | c \Rightarrow a | (b c)
+		\]
+		\end{theorem}
+\end{exercise}
+
 \section{Congruence Modulo}
+
+\begin{itemize}
+	\item In 12hrs format, 7 hours after 10am is 5pm.
+	\item In 12hrs format, 5 hours after 8am is 1pm.
+	\item In 24hrs format, 12 hours after 1300hrs is 0100hrs the following day.
+\end{itemize}
 
 \subsection{Properties of Congruence}
 
@@ -420,7 +484,32 @@ The symbol $\exists$ denotes the existential quantifier and is read as “there 
 
 \section{Truth Table}
 
+Given some (Mathematical) statements, we may form a truth table to list the truth value of some combinations of the statements depending on the truth value of the original statements.
+
+\begin{example}
+	Modus Ponen: $ P \Rightarrow Q $
+\end{example}
+
+Question: Why is $ P \Rightarrow Q $ true whenever $P$ is false?
+This is known as vacously true.
+
 \section{Negation}
+
+	\begin{definition}[Negation]
+		Let $P$ be a (mathematical) statement. The negation of $P$ , read as not $P$ , denoted as $P$, is true when $P$ is false, and false when $P$ is true.
+	\end{definition}
+
+	\subsection{Negation of Universal Statements}
+	
+		\begin{itemize}
+			\item Recall that universal statements are statements with the quantifier “for all”, “for any”.
+		\end{itemize}
+		
+	\subsection{Negation of Existential Statements}
+	
+		The negation of an existential statement is a universal statement.
+
+\section{Modus Tollens or Contrapositive}
 
 \section{Sequences and Series}
 
